@@ -1,0 +1,122 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    border-radius: 20px;
+}
+window#waybar {
+    background-color: transparent;
+    font-size: 15px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces {
+  background-color: rgba(254,128,25, 0.8);
+}
+#workspaces button {
+    background-color: transparent;
+    margin: 0;
+    border: 0;
+}
+#taskbar button:hover {
+  background: rgba(214,93,14,1);
+}
+#workspaces button:hover {
+    background: rgba(214,93,14,1);
+    border-radius: 15px;
+}
+
+#workspaces button.focused {
+    background-color: black;
+
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#tray,
+#window,
+#language,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+.modules-right {
+  background-color: rgba(254,128,25, 0.8);
+}
+.modules-left {
+  background-color: rgba(254,128,25, 0.8);
+}
+#clock {
+    background-color: transparent;
+}
+
+#cpu {
+    background-color: transparent;
+}
+
+#memory {
+    background-color: transparent;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#pulseaudio {
+    background-color: transparent;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#language {
+    background: transparent;
+    min-width: 16px;
+}
+
+
