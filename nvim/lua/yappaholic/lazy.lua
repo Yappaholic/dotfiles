@@ -55,5 +55,25 @@ require("lazy").setup({
 	"RRethy/vim-illuminate",
 	"folke/flash.nvim",
 	'stevearc/conform.nvim',
-	{ 'akinsho/toggleterm.nvim',   version = "*",  config = true }
+	{ 'akinsho/toggleterm.nvim',   version = "*",  config = true },
+  {
+  "pmizio/typescript-tools.nvim",
+  dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" }},
+  {
+  'mrcjkb/rustaceanvim',
+  version = '^4', -- Recommended
+  lazy = false, -- This plugin is already lazy
+  },
+  "elkowar/yuck.vim",
+  {
+  'mrcjkb/haskell-tools.nvim',
+  version = '^3', -- Recommended
+  lazy = false, -- This plugin is already lazy
+  },
+  "stevearc/oil.nvim",
+  {
+  "jiaoshijie/undotree",
+  dependencies = "nvim-lua/plenary.nvim",
+  },
+  "tpope/vim-fugitive"
 }, {})
