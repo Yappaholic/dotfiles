@@ -6,3 +6,7 @@ vim.keymap.set("n", "<leader>bd", vim.cmd.bd)
 vim.keymap.set("n", "[b", vim.cmd.bp)
 vim.keymap.set("n", "]b", vim.cmd.bn)
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 27c0cf7 (Small update)

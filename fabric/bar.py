@@ -15,7 +15,10 @@ from fabric.system_tray.widgets import SystemTray
 from fabric.utils.string_formatter import FormattedString
 from fabric.widgets.circular_progress_bar import CircularProgressBar
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces, ActiveWindow, Language
+<<<<<<< HEAD
 from fabric.audio.service import Audio
+=======
+>>>>>>> 27c0cf7 (Small update)
 from fabric.utils import (
     set_stylesheet_from_file,
     bulk_replace,
@@ -82,7 +85,11 @@ class StatusBar(Window):
         super().__init__(
             layer="top",
             anchor="left top right",
+<<<<<<< HEAD
             margin="10px 20px -2px 20px",
+=======
+            margin="10px 10px -2px 10px",
+>>>>>>> 27c0cf7 (Small update)
             exclusive=True,
             visible=False,
             all_visible=False,
@@ -104,11 +111,19 @@ class StatusBar(Window):
         self.active_window = ActiveWindow(
             formatter=FormattedString(
                 "{test_title(win_class)}",
+<<<<<<< HEAD
                 test_title=lambda x, max_length=20: (
                     "Desktop"
                     if len(x) == 0
                     else x if len(x) <= max_length else x[: max_length - 3] + "..."
                 ),
+=======
+                test_title=lambda x, max_length=20: "Desktop"
+                if len(x) == 0
+                else x
+                if len(x) <= max_length
+                else x[: max_length - 3] + "...",
+>>>>>>> 27c0cf7 (Small update)
             ),
             name="window",
         )
@@ -117,8 +132,13 @@ class StatusBar(Window):
                 "{replace_lang(language)}",
                 replace_lang=lambda x: bulk_replace(
                     x,
+<<<<<<< HEAD
                     [r".*Eng.*", r".*Ru.*"],
                     ["ENG", "RU"],
+=======
+                    [r".*Eng.*", r".*Ar.*"],
+                    ["ENG", "ARA"],
+>>>>>>> 27c0cf7 (Small update)
                     regex=True,
                 ),
             ),
@@ -170,12 +190,21 @@ class StatusBar(Window):
         self.show_all()
 
     def update_progress_bars(self):
+<<<<<<< HEAD
         self.ram_circular_progress_bar.percentage = int(psutil.virtual_memory().percent)
         self.cpu_circular_progress_bar.percentage = int(psutil.cpu_percent())
         return True
 
 
 def apply_style():
+=======
+        self.ram_circular_progress_bar.percentage = psutil.virtual_memory().percent
+        self.cpu_circular_progress_bar.percentage = psutil.cpu_percent()
+        return True
+
+
+def apply_style(*args):
+>>>>>>> 27c0cf7 (Small update)
     logger.info("[Bar] CSS applied")
     return set_stylesheet_from_file(get_relative_path("bar.css"))
 

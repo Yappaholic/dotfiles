@@ -14,7 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	'nvim-telescope/telescope.nvim',
 	'nvim-lua/plenary.nvim',
+<<<<<<< HEAD
 	"ellisonleao/gruvbox.nvim",
+=======
+  {"rose-pine/neovim", name="rose-pine"},
+>>>>>>> 27c0cf7 (Small update)
 	'nvim-treesitter/nvim-treesitter',
 	{ 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
 	'neovim/nvim-lspconfig',
@@ -55,7 +59,10 @@ require("lazy").setup({
 	"RRethy/vim-illuminate",
 	"folke/flash.nvim",
 	'stevearc/conform.nvim',
+<<<<<<< HEAD
 	{ 'akinsho/toggleterm.nvim',   version = "*",  config = true },
+=======
+>>>>>>> 27c0cf7 (Small update)
   {
   "pmizio/typescript-tools.nvim",
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" }},
@@ -75,5 +82,11 @@ require("lazy").setup({
   "jiaoshijie/undotree",
   dependencies = "nvim-lua/plenary.nvim",
   },
+<<<<<<< HEAD
   "tpope/vim-fugitive"
+=======
+  "tpope/vim-fugitive",
+  { "alexghergh/nvim-tmux-navigation",
+    lazy=false,}
+>>>>>>> 27c0cf7 (Small update)
 }, {})
