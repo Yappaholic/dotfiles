@@ -1,0 +1,61 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+unset-face global Default
+plug "andreyorst/plug.kak" noload
+plug "h-youhei/kakoune-surround"
+plug "alexherbo2/auto-pairs.kak"
+plug "raiguard/kak-harpoon"
+# Popup
+eval %sh{kak-popup init}
+# TreeSitter
+eval %sh{ kak-tree-sitter -dks -vvvv --init $kak_session --client $kak_session  }
+colorscheme kanagawa-dragon
+
+hook global WinCreate .*\.templ %{
+	set-option buffer filetype templ
+}
+# LSP
+eval %sh{ kak-lsp --kakoune -s $kak_session }
+hook global WinSetOption filetype=(lua|haskell|rust|html|css|python|go|javascript|typescript|purescript|c|cpp|templ|toml|nim|zig) %{
+    lsp-enable-window
+}
+#Highlighters
+lsp-inlay-diagnostics-enable global
+addhl global/ number-lines -relative
+set global tabstop 2
+set global indentwidth 2
+set global autoreload yes
+
+# Tabbing
+hook global InsertCompletionShow .* %{
+  map window insert <tab> <c-n>
+  map window insert <s-tab> <c-p>
+}
+hook global InsertCompletionHide .* %{
+  unmap window insert <tab> <c-n>
+  unmap window insert <s-tab> <c-p>
+}
+# Smarttab
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    set-option global softtabstop 2
+} config %{
+    hook global WinSetOption filetype=(rust|markdown|kak|typescript|javascript|css|html) smarttab
+    hook global WinSetOption filetype=(haskell) expandtab
+}
+# Auto pairs
+enable-auto-pairs
+
+# Copy and paste
+map global user y '<a-|>wl-copy<ret>' -docstring "Copy clipboard"
+map global user p '!wl-paste<ret>' -docstring "Paste clipboard"
+
+# Mappings
+map global user f ': popup --title open --kak-script %{edit %opt{popup_output}} -- fzf
+<ret>' -docstring "Fuzzy finder"
+map global user d ': lsp-diagnostics<ret>' -docstring 'LSP diagnostics'
+map global user k ': lsp-hover<ret>' -docstring 'LSP info'
+map global user c ': comment-line<ret>' -docstring 'Comment lines'
+# Surround
+map global user s ':surround<ret>' -docstring 'surround'
+map global user r ':change-surround<ret>' -docstring 'change'
+# Harpoon
+harpoon-add-bindings

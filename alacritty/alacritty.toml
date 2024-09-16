@@ -1,0 +1,20 @@
+import = [
+    "~/.config/alacritty/kanagawa-dragon.toml"
+]
+live_config_reload = true
+[window]
+opacity = 0.9
+padding = {x = 4, y = 0}
+
+[font]
+normal = { family = "Monaspace Neon", style = "Regular" }
+bold = { family = "Monaspace Neon", style = "Bold" }
+italic = { family = "Monaspace Neon", style = "Italic" }
+size = 12
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[mouse]
+hide_when_typing = true
+

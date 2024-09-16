@@ -1,0 +1,589 @@
+clear
+ls
+clear
+z
+clear
+polars
+clear
+cargo install nu_plugin_bash_env
+bash-env
+doas 
+clear
+do
+clear
+cd .config/nushell/
+ls
+kak config.nu
+cd .config/nushell/
+kak config.nu
+exit
+cd .config/nushell/
+kak config.nu
+exit
+kk
+clear
+echo /home/savvy/.cargo/bin/nu | doas tee -a /etc/shells
+bat /etc/shells
+chsh /home/savvy/.cargo/bin/nu
+chsh
+clear
+Hyprland
+clear
+kk .config/alacritty/alacritty.toml
+Hyprland
+kk .config/alacritty/alacritty.toml
+kk .config/nushell/config.nu
+bash-env
+clear
+kk .config/nushell/env.nu
+path_add
+path
+clear
+kk .config/nushell/env.nu
+path add
+path
+kk .config/nushell/env.nu
+$env.XDG_CONFIG_DIRS
+$env.PATH
+$env.PATH = ($env.PATH | split row (char esep) | append '/home/savvy/.cargo/bin')
+air
+$env.PATH
+kk .config/nushell/env.nu
+air
+clear
+kk .config/nushell/env.nu
+curl termux.carapace.sh | sh
+cd Downloads
+ls
+tar xvf carapace-bin_linux_amd64.tar.gz
+ls
+cp carapace
+$env.PATH
+cp carapace /opt/bin
+doas cp carapace /opt/bin
+clear
+cd..
+cd ..
+clear
+carapace
+kk .config/nushell/env.nu
+kk .config/nushell/config.nu
+clear
+bash-en
+bash-env
+ls -la
+exa -la
+clear
+ls -la
+ls .cargo/bin
+plugin
+plugin add 
+plugin add .cargo/bin/nu_plugin_bash_env
+clear
+plugin use
+bash-env
+plugin use nu_plugin_bash_env
+plugin use .cargo/bin/nu_plugin_bash_env
+bash-env
+clear
+bash-env /etc/bash_profile
+ls /etc/
+bash-env /etc/profile
+$env.EDITOR
+bash-env /etc/profile | load-env
+$env.EDITOR
+clear
+bat /etc/profile
+kk .config/nushell/env.nu 
+$env.PATH
+clang
+kk .config/nushell/env.nu 
+$env.PATH
+$env.EDITOR
+clear
+bat
+bat /etc/profile
+clear
+curl -s https://ohmyposh.dev/install.sh | bash -s
+ls .local/bin
+doas cp .local/bin/oh-my-posh /opt/
+clear
+rm -rf .local
+clear
+doas emerge -avuN --deep @world
+cd Downloads/
+ls
+tar xvf monaspace-v1.101.zip 
+unzip 
+unzip monaspace-v1.101.zip 
+ls
+cd monaspace-v1.101/
+ls
+cd fonts
+ls
+cd ..
+ls
+bash util/install_linux.sh 
+clear
+ls
+ohmyposh
+$env.PATH
+z
+zoxide
+zoxide init nushell
+kk .config/nushell/env.nu 
+kk .config/nushell/config.nu
+z
+clear
+z conifg
+z conf
+clear
+z /opt
+ls
+doas cp oh-my-posh bin/
+doas rm oh-my-posh 
+oh-my-posh 
+clear
+bat .config/
+cd ..
+clear
+z .config/fish
+z
+z .config
+z fish
+ls
+bat config.fish
+kk .config/nushell/env.nu
+z
+kk .config/nushell/env.nu
+bun
+clear
+kk .config/nushell/env.nu
+kk .config/nushell/config.nu 
+clear
+z conf
+ls
+mkdir ohmyposh
+cd ohmyposh/
+clear
+kk zen.toml
+clear
+z
+kk .config/nushell/config.nu 
+kk .config/nushell/env.nu 
+clear
+ls
+clear
+nvm
+clear
+cd .config
+clear
+bat fish/config.fish 
+z
+z .local
+ls
+z share
+ls
+clear
+bat .bashrc
+clear
+Hyprland
+z .config/hypr
+kk hyprland.conf 
+ktsctl
+ktsctl sync -a
+doas rm /run/user/1000/ktsctl
+doas rm -r /run/user/1000/ktsctl
+ktsctl sync -a
+doas rm -r /run/user/1000/ktsctl
+ktsctl sync -a
+doas rm -r /run/user/1000/ktsctl
+ktsctl sync -a
+z oh
+kk zen.toml 
+clear
+kk zen.toml 
+z oh
+kk zen.toml 
+z oh
+kk zen.toml 
+clear
+tailwindcss
+z /etc/portage
+ls
+doas kk package.use
+doas kak package.use 
+doas kak package.accept_keywords 
+exit
+tmux
+clear
+whereis tailwindcss
+z /home/savvy/.bun/bin
+ls
+kk tailwindcss 
+/usr/bin/env
+/usr/bin/env node
+/usr/bin/env bun
+/usr/bin/env | grep bun
+clera
+clear
+ln
+z
+man ln
+doas ln -sf /home/savvy/.bun/bin/bun /opt/bin/node
+node
+doas ln -sf "/home/savvy/.bun/bin/bun run --bun" /opt/bin/node
+node
+doas ln -sf /home/savvy/.bun/bin/bun run --bun /opt/bin/node
+doas rm /opt/bin/node
+kk .config/nushell/config.nu 
+node
+clear
+tailwindcss
+doas ln -sf /home/savvy/.bun/bin/bun /opt/bin/node
+tailwindcss
+bun i -g @tailwindcss/language-server@next
+bun i -g @tailwindcss/language-server
+tailwindcss-language-server 
+clear
+ff
+kk .config/nushell/config.nu 
+ff
+clear
+emerge-webrsync
+doas emerge-webrsync
+doas emerge -avuN --deep @world
+doas emerge -av --depclean rust
+doas emerge -av --depclean dev-lang/rust
+doas emerge -av --depclean dev-lang/rust virtual/rust
+qlist -I | grep rust
+eselect rust list
+rustup
+rustup show
+rustup-init-gentoo --symlink
+doas emerge -av rust-bin
+doas emerge -av --unmerge dev-lang/rust
+doas emerge -av --oneshot virtual/rust dev-lang/rust-bin
+eselect rust list
+clear
+cargo version
+rustup
+rustup show
+rustup default nightly
+cargo version
+rustc version
+rustc
+rustc --version
+rustup-init-gentoo --symlink
+doas rustup-init-gentoo -u
+rustup-init-gentoo -u
+rustup-init
+doas emerge -av --unmerge dev-lang/rust-bin
+rustup-init
+rustc
+clear
+rustc --version
+bat .config/nushell/env.nu 
+ls
+ls -la
+rm -rf .rustup/
+rustc
+rustup
+clear
+rustup-init-gentoo -s
+rustup-init-gentoo -u
+rustup-init-gentoo -s
+rustup-init -y
+ls -la
+rm -rf .rustup/
+rustup show
+rustup -y
+rustup
+rustup update
+rustup default nightly
+rustup default nightly -y
+rustup default nightly
+ls -la
+ls .rustup
+ls .cargo/bin
+rustup show
+rustup toolchain link system /usr
+doas rustup toolchain link system /usr
+rustup default nightly
+doas emerge -av eww
+doas emerge -av i3status-rust
+ls .cargo/bin
+doas ln -sf /home/savvy/.cargo/bin/rustc /usr/bin/rustc
+doas emerge -av i3status-rust
+doas emerge -av rust-bin
+rustc
+rustup default nightly
+rustc
+rustc --version
+clear
+rustc --version
+rustup default nightly
+rustup-init-gentoo -s
+rustup-init-gentoo -u
+rm .cargo/bin/rustc
+rm .cargo/bin/rustfmt
+rm .cargo/bin/rust-analyzer
+rm .cargo/bin/rust-gdb
+rm .cargo/bin/rust-doc
+rm .cargo/bin/rust-gdbgui
+rm .cargo/bin/rust-lldb
+rm .cargo/bin/rustdoc
+rm .cargo/bin/rustup
+clear
+rustup-init-gentoo -u
+rustup-init-gentoo -s
+rm .cargo/bin/cargo
+rustup-init-gentoo -s
+rm .cargo/bin/rust*
+rm .cargo/bin/cargo-clippy
+rm .cargo/bin/cargo-fmt
+rm .cargo/bin/cargo-miri
+rustup-init-gentoo -s
+rm .cargo/bin/rls
+rustup-init-gentoo -s
+cd .cargo/bin
+ls
+rm cargo* rust*
+ls
+rm clippy-driver
+cledar
+clear
+rustup-init-gentoo -s
+rustc --version
+rustup default nightly
+rustc --version
+rustup show
+rustc --version
+rustup show
+rustup
+clear
+rustc --version
+kk .config/nushell/env.nu 
+ls .cargo/bin
+cargo version
+whereis rustup-init-gentoo
+bat /usr/bin/rustup-init-gentoo 
+$env.PATH
+rustc --version
+rustup show
+ls
+z i3bar-river/
+cargo build
+z
+clear
+ff
+cargo
+cargo help
+doas emerge -avuN --deep @world
+doas emerge -av --depclean
+man emerge 
+man emerge
+doas emerge --select app-text/mandoc sys-boot/efibootmgr
+doas emerge -av --depclean
+clear
+ff
+dust /
+ls /usr/src
+doas emerge -av --depclean gentoo-sources
+doas eclean-kernel -n 1
+ls /usr/src
+ff
+z /usr/src
+ls
+ls -la
+clear
+z config
+z alacritty/
+z alac
+kk alacritty.toml 
+clear
+exit
+tmux
+z alac
+kk alacritty.toml 
+clear
+exit
+tmux
+clear
+ls -la
+kk
+doas emerge -av zellij
+z port
+doas kak package.accept_keywords 
+doas emerge -av zellij
+doas emerge -av fzf
+ls /usr/share/
+ls /usr/share/ | find name
+ls /usr/share/ | where name
+ls /usr/share/ | list name
+ls /usr/share/ | grep nu
+ls /usr/share/fzf
+clear
+fzf
+kk
+clear
+z
+cleawr
+clear
+$env.ZELLIJ
+z nu
+z config
+z nushell
+kk env.nu 
+$env.ZELLJ_AUTO_ATTACH
+clear
+kk .config/nushell/config.nu 
+clear
+z .config/kak
+kk kakrc
+z ..
+z kak-tree-sitter/
+ls
+kk config.toml
+z nu
+kk config.nu 
+ktsctl sync nushell
+ktsctl sync nu
+kk config.nu
+cd .config/nushell/
+kak env.nu
+clear
+z nu
+kk config.nu 
+cd .config/nushell/
+kak config.nu
+exit
+z nu
+Hyprland
+btop
+kill
+kill --help
+ps
+kill --help
+ps | sort-by name | get zellij
+ps | sort-by name
+doas reboot
+kak .config/nushell/config.nu
+exit
+kak .config/nushell/config.nu
+exit
+kak .config/nushell/config.nu
+exit
+clear
+zellij
+z nu
+kk config.nu 
+$env.ZELLIJ
+exit
+z nu
+kk config.nu 
+$env.ZELLIJ_AUTO_ATTACH
+kk config.nu 
+zellij attach
+exit
+zellij attach -c
+kk config.nu 
+clear
+ls
+ff
+of
+clear
+z nu
+z ..
+mkdir ~/.config/zellij<\n>zellij setup --dump-config > ~/.config/zellij/config.kdl
+mkdir ~/.config/zellij<\n>zellij setup --dump-config | save ~/.config/zellij/config.kdl
+kak zellij/config.kdl 
+clear
+ls
+clear
+z .config/kak-lsp
+ls
+kk kak-lsp.toml
+bun i -g vscode-langservers-extracted
+vscode-html-language-server
+vscode-html-language-server --stdio
+clear
+kk kak-lsp.toml 
+bun i -g emmet-ls
+bat kak-lsp.toml 
+z
+z repos
+ls
+z pokemon-htmx/
+ls
+kk index.html
+rm index.html
+clear
+ff
+of
+z
+clear
+su
+z linux
+z /usr/src/linux
+ls
+make menuconfig
+doas make menuconfig
+lsblk
+z /var/
+ls
+z log
+ls
+bat genkernel.log 
+lsbl
+lsblk
+doas mount /dev/sdc1 /mnt/iso
+z /mnt/iso
+ls
+ls ~
+mkdir ~/nix
+doas cp flake.nix home.nix ~/nix
+ls ~/nix
+doas reboot
+exit
+lsblk
+clear
+lsblk
+doas mount /dev/sdc1 /mnt/iso
+z /mnt/iso
+clear
+ls
+doas mount /dev/sdc1 /mnt/iso
+lsblk
+doas mount /dev/sdc1 /mnt/iso
+doas dd if=/mnt/iso/nixos-custom.iso of=/dev/sdd status=progress bc=8192k
+dd --help
+man dd
+bat /proc/meminfo
+kk /proc/meminfo
+bat /proc/meminfo
+bat --watch /proc/meminfo
+bat -- --watch /proc/meminfo
+bat /proc/meminfo --watch
+bat /proc/meminfo -- --watch
+doas dd if=/mnt/iso/nixos-custom.iso of=/dev/sdd status=progress bs=8192k
+doas reboot
+clear
+ls
+cd nix
+ls
+kk home.nix 
+kk flake.nix 
+ls 
+clear
+cd
+z hypr
+ls
+kk hyprland.conf 
+cd 
+ls
+gh repo clone Yappaholic/dotfiles
+ls
+cd dotfiles
+ls
+cp -r ~/.config/hypr .
