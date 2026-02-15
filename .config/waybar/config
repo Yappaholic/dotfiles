@@ -7,10 +7,10 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "niri/workspaces",
+        "dwl/window"
     ],
     "modules-center": [
-        "niri/window"
+        "dwl/tags"
     ],
     "modules-right": [
         "mpd",
@@ -199,13 +199,6 @@
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+    "on-click": "wlogout"
     }
 }
