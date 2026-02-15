@@ -1,4 +1,4 @@
-theme = Kanagawa Dragon
+theme = Tomorrow Night Burns
 shell-integration = fish
 shell-integration-features = true
 focus-follows-mouse = true
@@ -21,6 +21,11 @@ keybind = alt+j=next_tab
 keybind = alt+k=previous_tab
 keybind = alt+shift+r=reload_config
 keybind = alt+x=close_surface
+
+keybind = alt+digit_1=unbind
+keybind = alt+digit_2=unbind
+keybind = alt+digit_3=unbind
+keybind = alt+digit_4=unbind
 
 keybind = alt+1=unbind
 keybind = alt+2=unbind
