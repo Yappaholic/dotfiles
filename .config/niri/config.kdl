@@ -185,7 +185,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#ff0000"
+        active-color "#DCA561"
 
         // Color of the ring on inactive monitors.
         //
@@ -288,7 +288,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-sh-at-startup "gammastep -t 6500:2500 -l 56:27"
 spawn-at-startup "dunst"
-spawn-at-startup "waybar"
+spawn-sh-at-startup "waybar -c ~/.config/waybar/config-niri"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
