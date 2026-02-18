@@ -91,7 +91,7 @@
        ;;biblio            ; Writes a PhD for you (citation needed)
        ;;collab            ; buffers with friends
        ;;debugger          ; FIXME stepping through code, to help you add bugs
-       ;;direnv
+       direnv
        ;;docker
        editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
@@ -116,7 +116,7 @@
        ;;beancount         ; mind the GAAP
        (cc +lsp +peek +tree-sitter)         ; C > C++ == 1
        ;;clojure           ; java with a lisp
-       ;;common-lisp       ; if you've seen one lisp, you've seen them all
+       (common-lisp +tree-sitter)       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
@@ -150,7 +150,7 @@
        ;;lua               ; one-based indices? one-based indices
        (markdown +grip +tree-sitter)          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
-       ;;(nix  +lsp)               ; I hereby declare "nix geht mehr!"
+       (nix  +lsp +tree-sitter)               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org +tree-sitter)               ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
@@ -166,14 +166,14 @@
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        (rust +lsp +peek +tree-sitter)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (scala +lsp +tree-sitter)             ; java, but good
-       (scheme +guile +tree-sitter)   ; a fully conniving family of lisps
+       ;;(scheme +guile +tree-sitter)   ; a fully conniving family of lisps
        (sh +fish +lsp +tree-sitter)                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        (web +lsp +tree-sitter)               ; the tubes
-       yaml              ; JSON, but readable
+       (yaml +tree-sitter)              ; JSON, but readable
        (zig +lsp +tree-sitter)                ; C, but simpler
 
        :email
