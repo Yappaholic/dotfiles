@@ -109,9 +109,16 @@ map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %
 map global user f ': popup --title open --kak-script %{edit %opt{popup_output}} -- fzf <ret>' -docstring "Fuzzy finder"
 map global user Y ': popup --title open --kak-script %{edit %opt{popup_output}} -- yazi --chooser-file=/dev/stdout <ret>' -docstring "Yazi"
 map global user g ': popup --title open -- gitu <ret>' -docstring "Open Gitu"
+# LSP
 map global user d ': lsp-diagnostics<ret>' -docstring 'LSP diagnostics'
 map global user a ': lsp-code-actions<ret>' -docstring 'LSP actions'
+map global goto d <esc>:lsp-definition<ret> -docstring 'LSP definition'
+map global goto r <esc>:lsp-references<ret> -docstring 'LSP references'
+map global goto y <esc>:lsp-type-definition<ret> -docstring 'LSP type definition'
 map global user k ': lsp-hover<ret>' -docstring 'LSP info'
+map global user l ':enter-user-mode lsp<ret>' -docstring 'LSP mode'
+
+# Other
 map global user c ': comment-line<ret>' -docstring 'Comment lines'
 map global user "#" ': pwd<ret>' -docstring 'Change PWD to buffer dir'
 
