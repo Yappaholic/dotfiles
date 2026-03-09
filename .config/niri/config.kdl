@@ -288,7 +288,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-sh-at-startup "gammastep -t 6500:2500 -l 56:27"
 spawn-at-startup "dunst"
-spawn-sh-at-startup "waybar -c ~/.config/waybar/config-niri"
+spawn-at-startup "ironbar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
