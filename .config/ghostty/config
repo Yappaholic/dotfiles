@@ -1,4 +1,4 @@
-theme = Tomorrow Night Burns
+theme = Carbonfox
 shell-integration = fish
 shell-integration-features = true
 focus-follows-mouse = true

@@ -53,7 +53,8 @@ hook global BufCreate .*/?.+\.cs %{
 }
 
 eval %sh{ kak-tree-sitter -dks -vvvv --init $kak_session }
-colorscheme ashen
+colorscheme termcolors
+colorscheme carbonfox
 
 
 # LSP
