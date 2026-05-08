@@ -8,16 +8,9 @@ SETUVAR _fisher_paldepind_2F_projectdo_files:\x7e/\x2econfig/fish/functions/proj
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/hydro\x1epaldepind/projectdo\x1eoh\x2dmy\x2dfish/plugin\x2dforeign\x2denv
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _hydro_git_10259:master\x20\u21911\x20
-SETUVAR _hydro_git_11146:master\u2022\x20
-SETUVAR _hydro_git_1458:master\u2022\x20
-SETUVAR _hydro_git_16804:master\x20\u21911\x20
-SETUVAR _hydro_git_2355:master\u2022\x20
-SETUVAR _hydro_git_26694:wasm\x2dbindgen\x2dcli\x20
 SETUVAR _hydro_git_27230:master\u2022\x20
 SETUVAR _hydro_git_3680:master\u2022\x20
 SETUVAR _hydro_git_565:\x1d
-SETUVAR _hydro_git_6673:master\u2022\x20
-SETUVAR _hydro_git_8217:wasm\x2dbindgen\x2dcli\x20
 SETUVAR _hydro_git_8370:master\u2022\x20
 SETUVAR _hydro_git_9755:master\u2022\x20
 SETUVAR fish_user_paths:/home/savvy/\x2econfig/emacs/bin\x1e/home/savvy/\x2ecargo/bin\x1e/usr/bin

@@ -1,4 +1,3 @@
-import           Data.List.Split
 import           XMonad
 import qualified XMonad.StackSet                    as W
 -- Actions
@@ -15,6 +14,8 @@ import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.ToggleLayouts
 import           XMonad.Layout.WindowNavigation
+import           XMonad.Layout.BoringWindows
+import           XMonad.Layout.Tabbed
 -- Hooks
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.EwmhDesktops
@@ -33,7 +34,13 @@ import           XMonad.Util.NamedScratchpad
 import           XMonad.Util.SessionStart           (doOnce)
 import           XMonad.Util.SpawnOnce              (spawnOnce)
 
-myLayout = toggleLayouts Full $ maximizeWithPadding 0 $ windowNavigation $ subTabbed $ smartSpacingWithEdge 4 (smartBorders emptyBSP ||| smartBorders (Tall 1(3/100) (1/2)))
+myLayout = toggleLayouts Full
+            $ maximizeWithPadding 0
+            $ windowNavigation
+            $ subTabbed
+            $ boringWindows
+            $ smartSpacingWithEdge 4 
+            $ smartBorders emptyBSP ||| smartBorders (Tall 1(3/100) (1/2)) ||| noBorders simpleTabbed
 
 myPP :: PP
 myPP = def
@@ -72,8 +79,8 @@ myStartupHook = doOnce $ do
   spawnOnce "xset r rate 300 30"
   spawnOnce "setxkbmap -layout 'us,ru' -option 'grp:toggle,ctrl:nocaps' -variant 'colemak_dh_wide_iso,'"
   spawnOnce "feh --bg-fill ~/Pictures/wallpaper.jpg"
-  spawnOnce "polybar"
   spawnOnce "dunst"
+  spawnOnce "emacs --daemon"
   -- spawnOnce "trayer-srg --edge top --align right --widthtype request -l --tint 0x181818FF"
 
 myWorkspaces :: [String]
@@ -81,7 +88,7 @@ myWorkspaces = ["1","2","3","4", "5"]
 
 main :: IO ()
 main = xmonad
-       -- $ withSB mySB
+       $ withSB mySB
        $ fullscreenSupportBorder
        $ docks
        $ ewmhFullscreen
@@ -104,10 +111,11 @@ main = xmonad
         }
         `additionalKeysP`
         [ ("M-<Return>", spawn "ghostty")
-        , ("M-b", spawn "qutebrowser")
-        , ("M-e", spawn "emacsclient -c")
+        , ("M-b", spawn "zen")
+        , ("M-C-e", spawn "emacsclient -c")
         , ("M-y", spawn "sh -c 'scrot --select - | xclip -selection clipboard -t image/png'")
         , ("M-<Space>", shellPrompt def)
+        , ("M-C-<Space>", spawn "rofi -show drun")
         , ("M-S-<Space>", sendMessage NextLayout)
         , ("M-q", kill)
         , ("M-f", sendMessage (Toggle "Full"))
@@ -127,8 +135,10 @@ main = xmonad
         , ("M-u", withFocused (sendMessage . MergeAll))
         , ("M-i", withFocused (sendMessage . UnMerge))
 
-        , ("M-,", onGroup W.focusUp')
-        , ("M-.", onGroup W.focusDown')
+        , ("M-,", focusUp)
+        , ("M-.", focusDown)
+        , ("M-C-,", onGroup W.focusUp')
+        , ("M-C-.", onGroup W.focusDown')
         -- Scratchpads
         , ("M-S-s", withFocused $ toggleDynamicNSP "dyn1")
         , ("M-s", dynamicNSPAction "dyn1")

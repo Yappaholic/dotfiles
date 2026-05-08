@@ -34,7 +34,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'kanagawa-dragon)
+(setq doom-theme 'base16-oxocarbon-dark)
 
 ;; Posix shell
 (setq shell-file-name (executable-find "fish"))
@@ -51,56 +51,25 @@
 (setq default-frame-alist '((undecorated . t)))
 (scroll-bar-mode -1)
 
+(after! treesit-auto
+  (global-treesit-auto-mode))
 ;; Odin language
 (add-to-list 'auto-mode-alist '("\\.odin\\'" . odin-ts-mode))
 ;; QML language
 (add-to-list 'auto-mode-alist '("\\.qml\\'" . qml-mode))
-
-(after! lsp-mode
-  (add-to-list 'lsp-language-id-configuration '(odin-ts-mode . "odin"))
-
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection "ols")
-                    :major-modes '(odin-ts-mode)
-                    :server-id 'ols
-                    :multi-root t))
-
-  ;; Lsp Booster
-  (defun lsp-booster--advice-json-parse (old-fn &rest args)
-    "Try to parse bytecode instead of json."
-    (or
-     (when (equal (following-char) ?#)
-       (let ((bytecode (read (current-buffer))))
-         (when (byte-code-function-p bytecode)
-           (funcall bytecode))))
-     (apply old-fn args)))
-  (advice-add (if (progn (require 'json)
-                         (fboundp 'json-parse-buffer))
-                  'json-parse-buffer
-                'json-read)
-              :around
-              #'lsp-booster--advice-json-parse)
-
-  (defun lsp-booster--advice-final-command (old-fn cmd &optional test?)
-    "Prepend emacs-lsp-booster command to lsp CMD."
-    (let ((orig-result (funcall old-fn cmd test?)))
-      (if (and (not test?)                             ;; for check lsp-server-present?
-               (not (file-remote-p default-directory)) ;; see lsp-resolve-final-command, it would add extra shell wrapper
-               lsp-use-plists
-               (not (functionp 'json-rpc-connection))  ;; native json-rpc
-               (executable-find "emacs-lsp-booster"))
-          (progn
-            (when-let ((command-from-exec-path (executable-find (car orig-result))))  ;; resolve command from exec-path (in case not found in $PATH)
-              (setcar orig-result command-from-exec-path))
-            (message "Using emacs-lsp-booster for %s!" orig-result)
-            (cons "emacs-lsp-booster" orig-result))
-        orig-result)))
-  (advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
-  )
+;; KDL
+(add-to-list 'auto-mode-alist '("\\.kdl\\'" . kdl-mode))
+;; CPP modules
+(add-to-list 'auto-mode-alist '("\\.cppm\\'" . cpp-mode))
 
 (add-hook 'odin-ts-mode-hook #'lsp!)
 (set-formatter! 'odinfmt '("odinfmt" filepath) :modes '(odin-ts-mode))
 (setq lsp-nix-nixd-formatting-command [ "alejandra" ])
+(setq-hook! 'emacs-lisp-mode-hook +format-inhibit t)
+(setq-hook! 'scheme-mode +format-inhibit t)
+(setq +format-on-save-disabled-modes
+      '(emacs-lisp-mode
+        scheme-mode))
 
 ;; Harpoon config
 (map! :leader "C-SPC" 'harpoon-quick-menu-hydra)
@@ -121,7 +90,9 @@
 
 (map! :leader "k" 'lsp-ui-doc-glance)
 
-
+(map! :i "C-o" #'company-complete)
+(map! :after company-mode :map company-mode-map :i "<return>" nil)
+(map! :leader "m g" 'guix-popup)
 
 ;; JSON Schemas
 (defvar lsp-json--schema-associations
@@ -145,6 +116,13 @@
     :/.eslintrc.json ["http://json.schemastore.org/eslintrc"]
     :/.eslintrc ["http://json.schemastore.org/eslintrc"])
   "Default json schemas.")
+
+(with-eval-after-load 'circe
+  (set-irc-server! "irc.libera.chat"
+    `(:tls t
+      :port 6697
+      :nick "Yapppaholic"
+      :channels ("#guix"))))
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;

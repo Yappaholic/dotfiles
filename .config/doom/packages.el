@@ -17,16 +17,12 @@
   :recipe (:host github :repo "Sampie159/odin-ts-mode" :files ("odin-ts-mode.el")))
 (package! harpoon)
 (package! ess)
-(package! ion-mode
-  :recipe (:host github :repo "iwahbe/ion-mode" :files ("ion-mode.el")))
 (package! kanagawa-themes)
 (package! nix-buffer)
 (package! pdf-tools)
 (package! ron-mode)
-(package! 0x0)
-(package! screenshot
-  :recipe (:host github :repo "tecosaur/screenshot" :files ("screenshot.el")))
-(package! posframe)
+(package! base16-theme)
+(package! kdl-mode)
 ;; If the package you are trying to install does not contain a PACKAGENAME.el
 ;; file, or is located in a subdirectory of the repo, you'll need to specify
 ;; `:files' in the `:recipe':

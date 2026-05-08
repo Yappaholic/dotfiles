@@ -18,10 +18,11 @@ Config { overrideRedirect = True
                     , Run Com "wpctl" ["get-volume", "@DEFAULT_SINK@"] "pulse" 10
                     , Run Date "%a %Y-%m-%d <fc=#8be9fd>%H:%M</fc>" "date" 10
                     , Run UnsafeXMonadLog
-                    , Run XPropertyLog "_XMONAD_TRAYPAD"
+                    --, Run XPropertyLog "_XMONAD_TRAYPAD"
+                    --, ^_XMONAD_TRAYPAD^
                     ]
        , sepChar  = "^"
        , alignSep = "}{"
-       , template = " ^UnsafeXMonadLog^ }{ ^cpu^ | Disk: ^disku^ | ^memory^ | <action=`wpctl set-volume @DEFAULT_SINK@ 5%+` button=1><action=`wpctl set-volume @DEFAULT_SINK@ 5%-` button=3>^pulse^%</action></action> | <action=`loginctl poweroff`><fc=#FFFFFF>exit</fc></action> | ^date^ ^_XMONAD_TRAYPAD^"
+       , template = " ^UnsafeXMonadLog^ }{ ^cpu^ | Disk: ^disku^ | ^memory^ | <action=`wpctl set-volume @DEFAULT_SINK@ 5%+` button=1><action=`wpctl set-volume @DEFAULT_SINK@ 5%-` button=3>^pulse^%</action></action> | <action=`loginctl poweroff`><fc=#FFFFFF>exit</fc></action> | ^date^"
        }
 

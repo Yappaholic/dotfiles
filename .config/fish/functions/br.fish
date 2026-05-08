@@ -1,0 +1,1 @@
+/home/savvy/.local/share/broot/launcher/fish/br.fish
