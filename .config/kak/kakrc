@@ -15,9 +15,9 @@ bundle-install-hook kak-ansi %{
 
 bundle kak-ansi https://github.com/eraserhd/kak-ansi %{}
 
-bundle-install-hook kak-popup  %{
-	cargo install --force --path .
-}
+# bundle-install-hook kak-popup  %{
+# 	cargo install --force --path .
+# }
 
 bundle kak-popup https://github.com/enricozb/popup.kak %{
   eval %sh{kak-popup init}
@@ -54,7 +54,7 @@ hook global BufCreate .*/?.+\.cs %{
 
 eval %sh{ kak-tree-sitter -dks -vvvv --init $kak_session }
 colorscheme termcolors
-colorscheme carbonfox
+colorscheme kanagawa
 
 
 # LSP
@@ -92,6 +92,14 @@ hook global BufSetOption filetype=c3 %{
     [c3lsp]
     root_globs = [ "project.json" ]
   }
+}
+
+hook global BufSetOption filetype=d %{
+  set-option buffer lsp_servers %{
+    [serve-d]
+    root_globs = [ "dub.json", "dub.sdl" ]
+  }
+
 }
 
 #Highlighters
