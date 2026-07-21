@@ -1,0 +1,15 @@
+[general]
+import = ["oxocarbon.toml"]
+
+[font]
+normal = {family = "MapleMono NF"}
+bold = {family = "MapleMono NF"}
+italic = {family = "MapleMono NF"}
+bold_italic  = {family = "MapleMono NF"}
+size = 14
+
+[cursor]
+style = {shape = "Beam"}
+
+[mouse]
+hide_when_typing = true
