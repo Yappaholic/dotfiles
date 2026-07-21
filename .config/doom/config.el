@@ -74,6 +74,7 @@
 ;; Harpoon config
 (map! :leader "C-SPC" 'harpoon-quick-menu-hydra)
 (map! :n "C-s" 'harpoon-add-file)
+(global-unset-key (kbd "C-x C-l"))
 
 ;; And the vanilla commands
 (map! :leader "j c" 'harpoon-clear)
@@ -90,9 +91,7 @@
 
 (map! :leader "k" 'lsp-ui-doc-glance)
 
-(map! :i "C-o" #'company-complete)
-(map! :after company-mode :map company-mode-map :i "<return>" nil)
-(map! :leader "m g" 'guix-popup)
+;;(map! :leader "m g" 'guix-popup)
 
 ;; JSON Schemas
 (defvar lsp-json--schema-associations
