@@ -40,7 +40,7 @@ myLayout = toggleLayouts Full
             $ subTabbed
             $ boringWindows
             $ smartSpacingWithEdge 4 
-            $ smartBorders emptyBSP ||| smartBorders (Tall 1(3/100) (1/2)) ||| noBorders simpleTabbed
+            $ smartBorders (avoidStruts emptyBSP) ||| smartBorders (avoidStruts (Tall 1(3/100) (1/2))) ||| noBorders (avoidStruts simpleTabbed)
 
 myPP :: PP
 myPP = def
@@ -74,14 +74,10 @@ mySB = statusBarProp "xmobar ~/.config/xmonad/xmobar.hs" (clickablePP myPP)
 
 myStartupHook :: X ()
 myStartupHook = doOnce $ do
-  --spawnOnce "emacs --fg-daemon"
-  spawnOnce "gammastep -l 56:27 -t 6500:3000"
+  spawnOnce "systemctl --user restart gammastep"
   spawnOnce "xset r rate 300 30"
-  spawnOnce "setxkbmap -layout 'us,ru' -option 'grp:toggle,ctrl:nocaps' -variant 'colemak_dh_wide_iso,'"
   spawnOnce "feh --bg-fill ~/Pictures/wallpaper.jpg"
   spawnOnce "dunst"
-  spawnOnce "emacs --daemon"
-  -- spawnOnce "trayer-srg --edge top --align right --widthtype request -l --tint 0x181818FF"
 
 myWorkspaces :: [String]
 myWorkspaces = ["1","2","3","4", "5"]
@@ -89,11 +85,11 @@ myWorkspaces = ["1","2","3","4", "5"]
 main :: IO ()
 main = xmonad
        $ withSB mySB
-       $ fullscreenSupportBorder
-       $ docks
-       $ ewmhFullscreen
-       $ ewmh
-       $ navigation2DP def
+       . fullscreenSupportBorder
+       . docks
+       . ewmhFullscreen
+       . ewmh
+       . navigation2DP def
                        ("k","h","j","l")
                        [("M-", windowGo)
                        ,("M-C-", windowSwap)]
@@ -103,15 +99,15 @@ main = xmonad
         , workspaces = myWorkspaces
         , layoutHook = avoidStruts myLayout
         , startupHook = myStartupHook
-        , terminal = "ghostty"
+        , terminal = "alacritty"
         , manageHook = composeOne [isFullscreen -?> doFullFloat]
-        , handleEventHook = handleEventHook def <> trayerPaddingXmobarEventHook <+> fixSteamFlicker
+        , handleEventHook = handleEventHook def <> fixSteamFlicker
         , focusedBorderColor = "#EBDBB2"
         , normalBorderColor = "#282828"
         }
         `additionalKeysP`
-        [ ("M-<Return>", spawn "ghostty")
-        , ("M-b", spawn "zen")
+        [ ("M-<Return>", spawn "alacritty")
+        , ("M-b", spawn "waterfox")
         , ("M-C-e", spawn "emacsclient -c")
         , ("M-y", spawn "sh -c 'scrot --select - | xclip -selection clipboard -t image/png'")
         , ("M-<Space>", shellPrompt def)

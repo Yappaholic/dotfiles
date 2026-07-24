@@ -15,7 +15,7 @@ Config { overrideRedirect = True
                                 ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
                                 20
                     , Run Memory ["--template", "Mem: <usedratio>%"] 10
-                    , Run Com "wpctl" ["get-volume", "@DEFAULT_SINK@"] "pulse" 10
+                    , Run Com "wpctl" ["get-volume", "@DEFAULT_SINK@"] "pulse" 2
                     , Run Date "%a %Y-%m-%d <fc=#8be9fd>%H:%M</fc>" "date" 10
                     , Run UnsafeXMonadLog
                     --, Run XPropertyLog "_XMONAD_TRAYPAD"
@@ -23,6 +23,6 @@ Config { overrideRedirect = True
                     ]
        , sepChar  = "^"
        , alignSep = "}{"
-       , template = " ^UnsafeXMonadLog^ }{ ^cpu^ | Disk: ^disku^ | ^memory^ | <action=`wpctl set-volume @DEFAULT_SINK@ 5%+` button=1><action=`wpctl set-volume @DEFAULT_SINK@ 5%-` button=3>^pulse^%</action></action> | <action=`loginctl poweroff`><fc=#FFFFFF>exit</fc></action> | ^date^"
+       , template = " ^UnsafeXMonadLog^ }{ ^cpu^ | Disk: ^disku^ | ^memory^ | <action=`wpctl set-volume @DEFAULT_SINK@ 5%+` button=4><action=`wpctl set-volume @DEFAULT_SINK@ 5%-` button=5>^pulse^%</action></action> | <action=`loginctl poweroff`><fc=#FFFFFF>exit</fc></action> | ^date^"
        }
 

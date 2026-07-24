@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p "ghc.withPackages (pkgs: [pkgs.xmonad pkgs.xmonad-contrib])"
 
-exec guix shell gcc-toolchain@15 -- ghc \
+exec ghc \
   --make xmonad.hs \
   -i \
   -ilib \
