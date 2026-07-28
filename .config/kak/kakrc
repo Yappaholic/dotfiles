@@ -52,10 +52,8 @@ hook global BufCreate .*/?.+\.cs %{
   set-option buffer filetype csharp
 }
 
-eval %sh{ kak-tree-sitter -dks -vvvv --init $kak_session }
-colorscheme termcolors
-colorscheme kanagawa
-
+#eval %sh{ kak-tree-sitter -dks -vvvv --init $kak_session }
+colorscheme solarized-dark-termcolors
 
 # LSP
 eval %sh{ kak-lsp --kakoune -s $kak_session }

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mkdir "$HOME/.config/kak/bundle/"
+git clone https://codeberg.org/jdugan6240/kak-bundle "$HOME/.config/kak/bundle/kak-bundle"

@@ -1,5 +1,4 @@
-#!/usr/bin/env nix-shell
-#! nix-shell -i bash -p "ghc.withPackages (pkgs: [pkgs.xmonad pkgs.xmonad-contrib])"
+#!/usr/bin/env bash
 
 exec ghc \
   --make xmonad.hs \
@@ -8,4 +7,5 @@ exec ghc \
   -fforce-recomp \
   -main-is main \
   -v0 \
+  -O3 \
   -o "$1"
